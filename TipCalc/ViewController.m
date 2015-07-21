@@ -26,7 +26,7 @@
    NSString *userInput = [_textField text];
 
     if ([userInput length] == 0) {
-        UIAlertView *alertView =  [[UIAlertView alloc] initWithTitle:@"Tip Ammount" message:@"Oops! Looks like you forgot to type in a Bill Amount!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        UIAlertView *alertView =  [[UIAlertView alloc] initWithTitle:@"Tip Ammount" message:@"Oops! Looks like you forgot to type in a Bill Total!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];
     } else {
         float billAmount = [userInput floatValue];
