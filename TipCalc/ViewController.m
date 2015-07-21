@@ -31,9 +31,16 @@
     } else {
         float billAmount = [userInput floatValue];
         float tipAmount = [_slider value]* billAmount;
+
         NSString *tipString = [[NSString alloc] initWithFormat:@"$%1.2f",tipAmount];
         [_label setText:tipString];
+
+       float totalBill = billAmount + tipAmount;
+        NSString *tb = [[NSString alloc] initWithFormat:@"$%1.2f", totalBill];
+        [_totalBillLabel setText:tb];
     }
+
+    
 }
 - (IBAction)valueChange:(id)sender {
     NSString *currentTipString = [[NSString alloc] initWithFormat:@"%1.2f%%",[_slider value]*100];

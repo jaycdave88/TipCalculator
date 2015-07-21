@@ -16,6 +16,7 @@
 - (IBAction)valueChange:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *currentTipLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalBillLabel;
 
 @end
 
