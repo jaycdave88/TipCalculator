@@ -17,16 +17,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // roll out
-    [_label setText:@"hi"];
+    // thundercats hooooooooo!
+    [_label setText:@"$0.00"];
 }
 
 
 - (IBAction)buttonPressed:(id)sender {
-    NSString *userInput;
+   NSString *userInput = [_textField text];
 
-   userInput = [_textField text];
+    if ([userInput length] == 0) {
+        UIAlertView *alertView =  [[UIAlertView alloc] initWithTitle:@"Tip Ammount" message:@"Oops! Looks like you forgot to type in a Bill Amount!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alertView show];
+    } else {
+        float billAmount = [userInput floatValue];
+        float tipAmount = [_slider value]* billAmount;
+        NSString *tipString = [[NSString alloc] initWithFormat:@"$%1.2f",tipAmount];
+        [_label setText:tipString];
+    }
+}
+- (IBAction)valueChange:(id)sender {
+    NSString *currentTipString = [[NSString alloc] initWithFormat:@"%1.2f%%",[_slider value]*100];
 
-    [_label setText:userInput];
+    [_currentTipLabel setText:currentTipString];
+     
 }
 @end
