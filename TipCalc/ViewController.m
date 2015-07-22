@@ -17,10 +17,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // thundercats hooooooooo!
+
+    //thundercars hoooo
     [_label setText:@"$0.00"];
+    //dissmiss keyboard start
+    self.textField.delegate = self;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.textField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+
+    if (textField) {
+        [textField resignFirstResponder];
+    }
+
+    return NO;
+}
+// dissmiss keyboard end
 
 - (IBAction)buttonPressed:(id)sender {
    NSString *userInput = [_textField text];
@@ -48,4 +64,5 @@
     [_currentTipLabel setText:currentTipString];
      
 }
+
 @end

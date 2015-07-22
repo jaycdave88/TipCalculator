@@ -51,7 +51,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mhg-sU-YFQ">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mhg-sU-YFQ">
                                 <rect key="frame" x="20" y="387" width="560" height="43"/>
                                 <state key="normal" image="button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -138,7 +138,9 @@
                                 <exclude reference="WMn-Ed-47q"/>
                                 <exclude reference="1mt-Y9-ipQ"/>
                                 <exclude reference="FQO-ph-CbL"/>
+                                <exclude reference="Hkb-4h-M7B"/>
                                 <exclude reference="aPj-1t-d2c"/>
+                                <exclude reference="bSe-io-QDJ"/>
                                 <exclude reference="wuu-Xa-bEK"/>
                             </mask>
                         </variation>
