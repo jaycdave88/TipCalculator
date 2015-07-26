@@ -10,7 +10,6 @@
 
 @interface ViewController ()
 
-
 @end
 
 @implementation ViewController
@@ -38,8 +37,15 @@
 }
 // dissmiss keyboard end
 
+- (IBAction)valueChange:(id)sender {
+    NSString *currentTipString = [[NSString alloc] initWithFormat:@"%1.2f%%",[_slider value]*100];
+
+    [_currentTipLabel setText:currentTipString];
+}
+
+
 - (IBAction)buttonPressed:(id)sender {
-   NSString *userInput = [_textField text];
+    NSString *userInput = [_textField text];
 
     if ([userInput length] == 0) {
         UIAlertView *alertView =  [[UIAlertView alloc] initWithTitle:@"Tip Amount" message:@"Oops! Looks like you forgot to type in a Bill Total!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -51,18 +57,11 @@
         NSString *tipString = [[NSString alloc] initWithFormat:@"$%1.2f",tipAmount];
         [_label setText:tipString];
 
-       float totalBill = billAmount + tipAmount;
+        float totalBill = billAmount + tipAmount;
         NSString *tb = [[NSString alloc] initWithFormat:@"$%1.2f", totalBill];
         [_totalBillLabel setText:tb];
     }
-
     
-}
-- (IBAction)valueChange:(id)sender {
-    NSString *currentTipString = [[NSString alloc] initWithFormat:@"%1.2f%%",[_slider value]*100];
 
-    [_currentTipLabel setText:currentTipString];
-     
 }
-
 @end

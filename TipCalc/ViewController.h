@@ -10,12 +10,19 @@
 
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *label;
+
 - (IBAction)buttonPressed:(id)sender;
+
+
 @property (weak, nonatomic) IBOutlet UITextField *textField;
-@property (weak, nonatomic) IBOutlet UISlider *slider;
+
+
 - (IBAction)valueChange:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+
 @property (weak, nonatomic) IBOutlet UILabel *currentTipLabel;
+
 @property (weak, nonatomic) IBOutlet UILabel *totalBillLabel;
 
 
