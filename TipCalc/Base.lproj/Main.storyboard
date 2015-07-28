@@ -198,18 +198,19 @@
                                     <constraint firstAttribute="width" constant="49" id="6E6-RR-Opd"/>
                                     <constraint firstAttribute="height" constant="31" id="hZC-Bv-nSj"/>
                                 </constraints>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <color key="onTintColor" red="0.25199547439999997" green="0.35846756590000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="switch:" destination="BYZ-38-t0r" eventType="valueChanged" id="Mrr-Oh-QAk"/>
                                 </connections>
                             </switch>
-                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aL2-FP-mMP">
-                                <rect key="frame" x="414" y="130" width="170" height="29"/>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="aL2-FP-mMP">
+                                <rect key="frame" x="414" y="115" width="170" height="44"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="98B-4R-fCX"/>
-                                    <constraint firstAttribute="height" constant="28" id="nfy-eL-zja"/>
+                                    <constraint firstAttribute="height" constant="43" id="nfy-eL-zja"/>
                                 </constraints>
                                 <segments>
                                     <segment title="2"/>
@@ -222,7 +223,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split Pay:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JKG-wr-LDV">
-                                <rect key="frame" x="22" y="423" width="85" height="24"/>
+                                <rect key="frame" x="22" y="423" width="85" height="23.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -271,7 +272,7 @@
                             <constraint firstItem="jE8-C5-Kle" firstAttribute="top" secondItem="4XB-JD-1z1" secondAttribute="bottom" constant="15" id="UJk-I4-kNo"/>
                             <constraint firstItem="YeL-JQ-JcA" firstAttribute="trailing" secondItem="rbn-qE-j5a" secondAttribute="trailing" constant="1" id="W6Y-hj-hsr"/>
                             <constraint firstItem="gjB-Vd-MtQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WRF-Qr-Nhb"/>
-                            <constraint firstItem="aL2-FP-mMP" firstAttribute="top" secondItem="46L-Ej-aix" secondAttribute="bottom" constant="35" id="XYV-dS-3ib"/>
+                            <constraint firstItem="aL2-FP-mMP" firstAttribute="top" secondItem="46L-Ej-aix" secondAttribute="bottom" constant="20" id="XYV-dS-3ib"/>
                             <constraint firstAttribute="trailing" secondItem="J45-t5-agr" secondAttribute="trailing" constant="61" id="Y2J-4N-e73"/>
                             <constraint firstItem="cL3-aM-wl6" firstAttribute="top" secondItem="5Pg-l2-Gpr" secondAttribute="bottom" constant="22" id="YOj-gq-TIr"/>
                             <constraint firstItem="rbn-qE-j5a" firstAttribute="top" secondItem="YeL-JQ-JcA" secondAttribute="bottom" constant="8" id="Ydg-Ik-Dtk"/>

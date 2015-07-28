@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+
+extern float globalX;
+
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
 - (IBAction)buttonPressed:(id)sender;

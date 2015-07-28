@@ -12,7 +12,11 @@
 
 @end
 
+float globalX = NO;
+
 @implementation ViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,6 +25,7 @@
     [_label setText:@"$0.00"];
     //dissmiss keyboard start
     self.textField.delegate = self;
+
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -44,6 +49,24 @@
 }
 
 
+- (IBAction)splitPeopleAction:(id)sender {
+
+    NSString *userInput = [_textField text];
+    float billAmount = [userInput floatValue];
+    _splitPeople.selectedSegmentIndex = 7;
+    
+    if(_splitPeople.selectedSegmentIndex == 0){
+        globalX = billAmount / 2;
+    }else if (_splitPeople.selectedSegmentIndex == 1){
+        globalX = billAmount / 3;
+    }else if (_splitPeople.selectedSegmentIndex == 2){
+        globalX = billAmount / 4;
+    }else if (_splitPeople.selectedSegmentIndex == 3){
+        globalX = billAmount / 5;
+    }
+
+}
+
 - (IBAction)buttonPressed:(id)sender {
     NSString *userInput = [_textField text];
 
@@ -62,10 +85,12 @@
         [_totalBillLabel setText:tb];
 
 
-        }
-    
+        NSString *split = [[NSString alloc] initWithFormat:@"$%1.2f", globalX];
+        [_splitLable setText:split];
 
-}
+        }
+}//end button pressed
+
 - (IBAction)switch:(id)sender {
     if (_switchOutlet.on){
         (_splitPeople.hidden = NO);
@@ -74,34 +99,6 @@
     }
 }
 
-- (IBAction)splitPeopleAction:(id)sender {
-    NSString *userInput = [_textField text];
-    float billAmount = [userInput floatValue];
 
-    if(_splitPeople.selectedSegmentIndex == 0){
-        float splitTotal = billAmount / 2;
-
-        NSString *split = [[NSString alloc] initWithFormat:@"$%1.2f",splitTotal];
-        [_splitLable setText:split];
-
-
-    }else if (_splitPeople.selectedSegmentIndex == 1){
-        float splitTotal = billAmount / 3;
-
-        NSString *split = [[NSString alloc] initWithFormat:@"$%1.2f",splitTotal];
-        [_splitLable setText:split];
-    }else if (_splitPeople.selectedSegmentIndex == 2){
-        float splitTotal = billAmount / 4;
-
-        NSString *split = [[NSString alloc] initWithFormat:@"$%1.2f",splitTotal];
-        [_splitLable setText:split];
-
-    }else if (_splitPeople.selectedSegmentIndex == 3){
-        float splitTotal = billAmount / 5;
-
-        NSString *split = [[NSString alloc] initWithFormat:@"$%1.2f",splitTotal];
-        [_splitLable setText:split];
-    }
-}
 
 @end
