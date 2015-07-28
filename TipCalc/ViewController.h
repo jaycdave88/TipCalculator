@@ -25,6 +25,11 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *totalBillLabel;
 
+- (IBAction)switch:(id)sender;
+@property (weak, nonatomic) IBOutlet UISwitch *switchOutlet;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *splitPeople;
+- (IBAction)splitPeopleAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *splitLable;
 
 @end
 

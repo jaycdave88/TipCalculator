@@ -60,8 +60,48 @@
         float totalBill = billAmount + tipAmount;
         NSString *tb = [[NSString alloc] initWithFormat:@"$%1.2f", totalBill];
         [_totalBillLabel setText:tb];
-    }
+
+
+        }
     
 
 }
+- (IBAction)switch:(id)sender {
+    if (_switchOutlet.on){
+        (_splitPeople.hidden = NO);
+    }else{
+        _splitPeople.hidden = YES;
+    }
+}
+
+- (IBAction)splitPeopleAction:(id)sender {
+    NSString *userInput = [_textField text];
+    float billAmount = [userInput floatValue];
+
+    if(_splitPeople.selectedSegmentIndex == 0){
+        float splitTotal = billAmount / 2;
+
+        NSString *split = [[NSString alloc] initWithFormat:@"$%1.2f",splitTotal];
+        [_splitLable setText:split];
+
+
+    }else if (_splitPeople.selectedSegmentIndex == 1){
+        float splitTotal = billAmount / 3;
+
+        NSString *split = [[NSString alloc] initWithFormat:@"$%1.2f",splitTotal];
+        [_splitLable setText:split];
+    }else if (_splitPeople.selectedSegmentIndex == 2){
+        float splitTotal = billAmount / 4;
+
+        NSString *split = [[NSString alloc] initWithFormat:@"$%1.2f",splitTotal];
+        [_splitLable setText:split];
+
+    }else if (_splitPeople.selectedSegmentIndex == 3){
+        float splitTotal = billAmount / 5;
+
+        NSString *split = [[NSString alloc] initWithFormat:@"$%1.2f",splitTotal];
+        [_splitLable setText:split];
+    }
+}
+
 @end
