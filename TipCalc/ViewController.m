@@ -13,6 +13,7 @@
 @end
 
 float globalX = NO;
+int people = 0;
 
 @implementation ViewController
 
@@ -51,18 +52,26 @@ float globalX = NO;
 
 - (IBAction)splitPeopleAction:(id)sender {
 
+
+
     NSString *userInput = [_textField text];
     float billAmount = [userInput floatValue];
     _splitPeople.selectedSegmentIndex = 7;
+
+
     
     if(_splitPeople.selectedSegmentIndex == 0){
         globalX = billAmount / 2;
+        people = 2;
     }else if (_splitPeople.selectedSegmentIndex == 1){
         globalX = billAmount / 3;
+        people = 3;
     }else if (_splitPeople.selectedSegmentIndex == 2){
         globalX = billAmount / 4;
+        people = 4;
     }else if (_splitPeople.selectedSegmentIndex == 3){
         globalX = billAmount / 5;
+        people = 5;
     }
 
 }
@@ -77,6 +86,9 @@ float globalX = NO;
         float billAmount = [userInput floatValue];
         float tipAmount = [_slider value]* billAmount;
 
+        float totalPerPerson = tipAmount / people;
+        float perPersonTotal = totalPerPerson + globalX ;
+
         NSString *tipString = [[NSString alloc] initWithFormat:@"$%1.2f",tipAmount];
         [_label setText:tipString];
 
@@ -84,11 +96,14 @@ float globalX = NO;
         NSString *tb = [[NSString alloc] initWithFormat:@"$%1.2f", totalBill];
         [_totalBillLabel setText:tb];
 
-
-        NSString *split = [[NSString alloc] initWithFormat:@"$%1.2f", globalX];
-        [_splitLable setText:split];
-
+        if (_switchOutlet.on) {
+            NSString *split = [[NSString alloc] initWithFormat:@"$%1.2f", perPersonTotal];
+            [_splitLable setText:split];
+        }else{
+            [_splitLable setText:@"$0.00"];
         }
+
+        }// end outter elseb
 }//end button pressed
 
 - (IBAction)switch:(id)sender {
@@ -96,6 +111,7 @@ float globalX = NO;
         (_splitPeople.hidden = NO);
     }else{
         _splitPeople.hidden = YES;
+
     }
 }
 
