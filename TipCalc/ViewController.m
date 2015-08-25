@@ -44,9 +44,11 @@ int people = 0;
 // dissmiss keyboard end
 
 - (IBAction)valueChange:(id)sender {
-    NSString *currentTipString = [[NSString alloc] initWithFormat:@"%1.2f%%",[_slider value]*100];
-
+    float number = [_slider value];
+    int value = (int)(number * 100);
+    NSString *currentTipString = [[NSString alloc] initWithFormat:@"%i%%",value];
     [_currentTipLabel setText:currentTipString];
+//    NSLog(@"%i", value);
 }
 
 
